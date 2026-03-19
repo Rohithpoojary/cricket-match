@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leaderboard</title>
+<link rel="stylesheet" href="style.css">
+
+<script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // ✅ Load Points Table
+    let data = JSON.parse(localStorage.getItem("pointsTable"));
+
+    if (data) {
+        document.getElementById("p1").innerText = data.a1 || 0;
+        document.getElementById("p2").innerText = data.a2 || 0;
+        document.getElementById("p3").innerText = data.a3 || 0;
+        document.getElementById("p4").innerText = data.a4 || 0;
+        document.getElementById("p5").innerText = data.a5 || 0;
+        document.getElementById("p6").innerText = data.a6 || 0;
+    }
+
+    // ✅ Load Stats
+    let stats = JSON.parse(localStorage.getItem("tournamentStats"));
+
+    if (stats) {
+        document.getElementById("topRuns").innerText =
+            stats.runGetter.name + " - " + stats.runGetter.runs + " Runs";
+
+        document.getElementById("topWickets").innerText =
+            stats.wicketTaker.name + " - " + stats.wicketTaker.wickets + " Wickets";
+    }
+});
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>🏆 Points Table</h1>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="teams.html">Teams</a>
+<a href="leaderboard.html">Leaderboard</a>
+</nav>
+
+<table>
+<tr>
+    <th>Team</th>
+    <th>Points</th>
+</tr>
+
+<tr>
+    <td>Attackers Basrur</td>
+    <td id="p1">0</td>
+</tr>
+
+<tr>
+    <td>Jettigeshwara Friends</td>
+    <td id="p2">0</td>
+</tr>
+
+<tr>
+    <td>Friends Anagally</td>
+    <td id="p3">0</td>
+</tr>
+
+<tr>
+    <td>Brahmalingeshwara Friends</td>
+    <td id="p4">0</td>
+</tr>
+
+<tr>
+    <td>Royal Challengers Basrur</td>
+    <td id="p5">0</td>
+</tr>
+
+<tr>
+    <td>Gully Cricketers</td>
+    <td id="p6">0</td>
+</tr>
+</table>
+
+<div class="stats-container">
+    <h2>🏏 Tournament Stats</h2>
+
+    <div class="stat-box">
+        <h3>🔥 Highest Run Getter</h3>
+        <p id="topRuns">Loading...</p>
+    </div>
+
+    <div class="stat-box">
+        <h3>🎯 Highest Wicket Taker</h3>
+        <p id="topWickets">Loading...</p>
+    </div>
+</div>
+
+</body>
+</html>

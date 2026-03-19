@@ -1,0 +1,435 @@
+body{
+font-family:Arial;
+margin:0;
+background:#f4f6f9;
+text-align:center;
+}
+
+/* HEADER */
+header{
+background:linear-gradient(90deg,#ff512f,#dd2476);
+color:white;
+padding:30px;
+}
+
+header img{
+margin-top:10px;
+border-radius:10px;
+}
+
+/* NAVBAR */
+nav{
+background:#111;
+padding:15px;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff512f;
+}
+
+/* HERO */
+.hero{
+padding:40px;
+}
+
+.live-banner{
+background:red;
+color:white;
+display:inline-block;
+padding:10px 20px;
+border-radius:20px;
+margin-top:15px;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+50%{opacity:0.6;}
+}
+
+/* CARDS */
+.info-box{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+width:150px;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* MATCHES */
+.matches{
+margin:40px;
+}
+
+.match-card{
+background:white;
+margin:15px auto;
+padding:20px;
+width:60%;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.match-card:hover{
+background:#ff512f;
+color:white;
+}
+
+/* FOOTER */
+footer{
+background:#222;
+color:white;
+padding:15px;
+margin-top:30px;
+}
+
+/* TEAMS PAGE */
+
+.teams-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+padding:20px;
+}
+
+.team-card{
+background:white;
+width:260px;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+text-align:center;
+}
+
+.team-card:hover{
+transform:translateY(-10px) scale(1.03);
+}
+
+.team-card img{
+width:80px;
+height:80px;
+object-fit:cover;
+margin-bottom:10px;
+border-radius:50%;
+border:3px solid #ff512f;
+}
+
+.team-card h2{
+color:#ff512f;
+margin-bottom:10px;
+}
+
+.team-card p{
+margin:3px;
+font-size:14px;
+}
+
+/* POINTS TABLE */
+
+.points-table{
+width:80%;
+margin:30px auto;
+border-collapse:collapse;
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.points-table th{
+background:#111;
+color:white;
+padding:15px;
+}
+
+.points-table td{
+padding:12px;
+border-bottom:1px solid #ddd;
+font-weight:bold;
+}
+
+.points-table tr{
+transition:0.3s;
+}
+
+.points-table tr:hover{
+background:#ffe5e0;
+}
+
+/* TOP TEAM HIGHLIGHT */
+.points-table tr:first-child{
+background:#d4edda;
+}
+
+/* SECOND */
+.points-table tr:nth-child(2){
+background:#fff3cd;
+}
+
+/* THIRD */
+.points-table tr:nth-child(3){
+background:#f8d7da;
+}
+
+/* SCHEDULE TABLE */
+
+.schedule-table{
+width:85%;
+margin:30px auto;
+border-collapse:collapse;
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* HEADER */
+.schedule-table th{
+background:linear-gradient(90deg,#ff512f,#dd2476);
+color:white;
+padding:15px;
+font-size:16px;
+}
+
+/* ROWS */
+.schedule-table td{
+padding:14px;
+border-bottom:1px solid #eee;
+font-weight:500;
+}
+
+/* HOVER EFFECT */
+.schedule-table tr{
+transition:0.3s;
+}
+
+.schedule-table tr:hover{
+background:#ffe5e0;
+transform:scale(1.01);
+}
+
+/* MATCH NUMBER */
+.schedule-table td:first-child{
+font-weight:bold;
+color:#ff512f;
+}
+
+/* TEAM COLUMN */
+.schedule-table td:nth-child(2){
+font-weight:bold;
+}
+
+/* TIME COLUMN */
+.schedule-table td:nth-child(3){
+color:#555;
+}
+
+/* FINAL MATCH HIGHLIGHT */
+.schedule-table tr:last-child{
+background:#d4edda;
+font-weight:bold;
+}
+
+/* PLAYOFF MATCHES */
+.playoff{
+background:#fff3cd !important;
+font-weight:bold;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+.schedule-table{
+width:95%;
+font-size:14px;
+}
+}
+body {
+    background-color: #f4f4f4;
+}
+
+header {
+    background: red;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background: black;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.schedule-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+.schedule-table th {
+    background: black;
+    color: white;
+}
+
+.schedule-table td, th {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+/* ===== ADMIN PANEL IMPROVED ===== */
+
+.admin-container {
+    width: 85%;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Title */
+.admin-container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ff512f;
+}
+
+/* Section box */
+.admin-section {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Section title */
+.admin-section h2 {
+    margin-bottom: 15px;
+    color: #dd2476;
+}
+
+/* Grid layout */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Label */
+.form-row label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input */
+.form-row input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+/* Input focus */
+.form-row input:focus {
+    border-color: #ff512f;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255,81,47,0.5);
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    background: linear-gradient(90deg,#ff512f,#dd2476);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Button hover */
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Button group */
+.button-group {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Logout button special */
+button:last-child {
+    background: #333;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .admin-container {
+        width: 95%;
+        padding: 20px;
+    }
+}
+header {
+    background: red;
+}
+nav {
+    background: black;
+}

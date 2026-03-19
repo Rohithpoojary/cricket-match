@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+
+<style>
+
+/* Page Background */
+body {
+    background: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Container */
+.admin-container {
+    width: 80%;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Section */
+.admin-section {
+    margin-bottom: 30px;
+}
+
+/* Rows */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+}
+
+/* Inputs */
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #ff4b2b;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e63e1f;
+}
+
+/* Button center */
+.button-group {
+    text-align: center;
+    margin-top: 15px;
+}
+
+</style>
+<link rel="stylesheet" href="style.css">
+<script>
+
+// 🔐 Check login (runs immediately)
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+}
+
+// ✅ Save Points
+function save() {
+    let points = {
+        a1: document.getElementById("a1").value,
+        a2: document.getElementById("a2").value,
+        a3: document.getElementById("a3").value,
+        a4: document.getElementById("a4").value,
+        a5: document.getElementById("a5").value,
+        a6: document.getElementById("a6").value
+    };
+
+    localStorage.setItem("pointsTable", JSON.stringify(points));
+    alert("Leaderboard Updated!");
+}
+
+// ✅ Save Stats
+function saveStats() {
+    let stats = {
+        runGetter: {
+            name: document.getElementById("runName").value,
+            runs: document.getElementById("runScore").value
+        },
+        wicketTaker: {
+            name: document.getElementById("wicketName").value,
+            wickets: document.getElementById("wicketCount").value
+        }
+    };
+
+    localStorage.setItem("tournamentStats", JSON.stringify(stats));
+    alert("Stats Saved!");
+}
+
+// ✅ Load saved data into inputs (VERY IMPORTANT)
+function loadData() {
+    let points = JSON.parse(localStorage.getItem("pointsTable"));
+    if (points) {
+        document.getElementById("a1").value = points.a1 || "";
+        document.getElementById("a2").value = points.a2 || "";
+        document.getElementById("a3").value = points.a3 || "";
+        document.getElementById("a4").value = points.a4 || "";
+        document.getElementById("a5").value = points.a5 || "";
+        document.getElementById("a6").value = points.a6 || "";
+    }
+
+    let stats = JSON.parse(localStorage.getItem("tournamentStats"));
+    if (stats) {
+        document.getElementById("runName").value = stats.runGetter.name || "";
+        document.getElementById("runScore").value = stats.runGetter.runs || "";
+        document.getElementById("wicketName").value = stats.wicketTaker.name || "";
+        document.getElementById("wicketCount").value = stats.wicketTaker.wickets || "";
+    }
+}
+
+// 🚪 Logout (FIXED)
+function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "login.html";
+}
+
+// Run when page loads
+window.onload = loadData;
+
+</script>
+</head>
+<body>
+
+<div class="admin-container">
+
+<h1>Admin Panel</h1>
+
+<!-- Points Section -->
+<div class="admin-section">
+
+<div class="form-row">
+<label>Attackers Basrur</label>
+<input id="a1" type="number">
+
+<label>Jettigeshwara Friends</label>
+<input id="a2" type="number">
+
+<label>Friends Anagally</label>
+<input id="a3" type="number">
+</div>
+
+<div class="form-row">
+<label>Brahmalingeshwara Friends</label>
+<input id="a4" type="number">
+
+<label>Royal Challengers Basrur</label>
+<input id="a5" type="number">
+
+<label>Gully Cricketers</label>
+<input id="a6" type="number">
+</div>
+
+<div class="button-group">
+<button onclick="save()">Update Leaderboard</button>
+</div>
+
+</div>
+
+<!-- Stats Section -->
+<div class="admin-section">
+
+<h2>🏏 Tournament Stats Update</h2>
+
+<div class="form-row">
+<label>Highest Run Getter</label>
+<input id="runName" placeholder="Player Name">
+<input id="runScore" type="number" placeholder="Runs">
+</div>
+
+<div class="form-row">
+<label>Highest Wicket Taker</label>
+<input id="wicketName" placeholder="Player Name">
+<input id="wicketCount" type="number" placeholder="Wickets">
+</div>
+
+<div class="button-group">
+<button onclick="saveStats()">Save Stats</button>
+<button onclick="logout()">Logout</button>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
